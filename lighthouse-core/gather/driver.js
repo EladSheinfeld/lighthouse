@@ -733,6 +733,11 @@ class Driver {
     });
   }
 
+  serCookies(cookies) {
+    const promiseArr = cookies.map(cookie => this.sendCommand('Network.setCookie', cookie));
+    return Promise.all(promiseArr);
+  }
+
   _readTraceFromStream(streamHandle) {
     return new Promise((resolve, reject) => {
       let isEOF = false;

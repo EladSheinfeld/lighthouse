@@ -63,5 +63,8 @@ module.exports = {
   },
   blockUrlPatterns() {
     return Promise.resolve();
+  },
+  setCookies() {
+    return Promise.resolve();
   }
 };

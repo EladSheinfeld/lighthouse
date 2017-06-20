@@ -103,6 +103,7 @@ class GatherRunner {
       .then(_ => driver.cacheNatives())
       .then(_ => driver.dismissJavaScriptDialogs())
       .then(_ => resetStorage && driver.clearDataForOrigin(options.url))
+      .then(_ => driver.setCookies(options.flags.setCookies || []))
       .then(_ => gathererResults.UserAgent = [driver.getUserAgent()]);
   }
 
