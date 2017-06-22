@@ -733,7 +733,7 @@ class Driver {
     });
   }
 
-  serCookies(cookies) {
+  setCookies(cookies) {
     const promiseArr = cookies.map(cookie => this.sendCommand('Network.setCookie', cookie));
     return Promise.all(promiseArr);
   }
